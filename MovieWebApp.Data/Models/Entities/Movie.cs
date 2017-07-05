@@ -11,7 +11,7 @@ namespace MovieWebApp.Data.Models.Entities
         }
         public int Id { get; set; }
         public string Title { get; set; }
-        public string Duration { get; set; }
+        public int Year { get; set; }
         public string Hashtag { get; set; }
         public ICollection<MovieList> MovieLists { get; set; }
         public ICollection<Actor> Actors { get; set; }

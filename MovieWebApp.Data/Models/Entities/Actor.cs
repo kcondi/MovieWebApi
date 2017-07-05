@@ -8,14 +8,14 @@ namespace MovieWebApp.Data.Models.Entities
         Male,
         Female
     }
-    public enum HairColor
+    public enum Hair
     {
-     Brunette,
+     Brown,
      Blonde,
      Gray,
-     White,
      Black,
-     Red   
+     Red,
+     Bald   
     }
 
     public enum EyeColor
@@ -36,9 +36,8 @@ namespace MovieWebApp.Data.Models.Entities
         public string Name { get; set; }
         public DateTime DateOfBirth { get; set; }
         public int Height { get; set; }
-        public int Weight { get; set; }
         public Sex Sex { get; set; }
-        public HairColor HairColor { get; set; }
+        public Hair Hair{ get; set; }
         public EyeColor EyeColor { get; set; }
         public ICollection<Movie> Movies { get; set; }
     }
