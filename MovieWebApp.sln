@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieWebApp", "MovieWebApp\MovieWebApp.csproj", "{99686D88-97F0-4488-B47E-B6B465BE83E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieWebApp.Data", "MovieWebApp.Data\MovieWebApp.Data.csproj", "{B5EA5440-7E19-422D-BE58-4FEEE93BA541}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieWebApp.Domain", "MovieWebApp.Domain\MovieWebApp.Domain.csproj", "{74CCBB71-F99F-41CE-BABE-C02DEB4FC585}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{99686D88-97F0-4488-B47E-B6B465BE83E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99686D88-97F0-4488-B47E-B6B465BE83E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99686D88-97F0-4488-B47E-B6B465BE83E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5EA5440-7E19-422D-BE58-4FEEE93BA541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5EA5440-7E19-422D-BE58-4FEEE93BA541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5EA5440-7E19-422D-BE58-4FEEE93BA541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5EA5440-7E19-422D-BE58-4FEEE93BA541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74CCBB71-F99F-41CE-BABE-C02DEB4FC585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74CCBB71-F99F-41CE-BABE-C02DEB4FC585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74CCBB71-F99F-41CE-BABE-C02DEB4FC585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74CCBB71-F99F-41CE-BABE-C02DEB4FC585}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
