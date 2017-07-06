@@ -1,0 +1,50 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Data.Entity;
+using MovieWebApp.Data.Models;
+using MovieWebApp.Data.Models.Entities;
+
+namespace MovieWebApp.Domain.Repositories
+{
+    public class MovieListRepository
+    {
+        public MovieListRepository()
+        {
+            _context = new MovieContext();
+        }
+
+        private readonly MovieContext _context;
+
+        public List<MovieList> GetAllMovieLists()
+        {
+            return _context.MovieLists.ToList();
+        }
+        public MovieList GetMovieListDetails(int movieListToGetId)
+        {
+            return _context.MovieLists
+                .Include(x => x.Movies)
+                .SingleOrDefault(movieList => movieList.Id == movieListToGetId);
+        }
+        public void AddMovieList(MovieList movieListToAdd)
+        {
+            _context.MovieLists.Add(movieListToAdd);
+            _context.SaveChanges();
+        }
+        public void EditMovieList(MovieList editedMovieList)
+        {
+            var movieListToEdit = _context.MovieLists.Find(editedMovieList.Id);
+            if (movieListToEdit == null)
+                return;
+            movieListToEdit.Name = editedMovieList.Name;
+            _context.SaveChanges();
+        }
+        public void DeleteMovieList(int movieListToDeleteId)
+        {
+            var movieListToDelete = _context.MovieLists.Find(movieListToDeleteId);
+            if (movieListToDelete == null)
+                return;
+            _context.MovieLists.Remove(movieListToDelete);
+            _context.SaveChanges();
+        }
+    }
+}
