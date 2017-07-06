@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MovieWebApp.Data.Models;
 using MovieWebApp.Data.Models.Entities;
 
@@ -220,183 +217,93 @@ namespace MovieWebApp.Data.Initialization
                 },
                 new Actor()
                 {
-                    Name = "Arnold Schwarzenegger",
+                    Name = "Kate Winslet",
                     Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
+                    DateOfBirth = new DateTime(1975, 10, 5),
+                    Height = 169,
+                    Hair = Hair.Blonde,
+                    EyeColor = EyeColor.Gray
+                },
+                new Actor()
+                {
+                    Name = "Meryl Streep",
+                    Sex = Sex.Female,
+                    DateOfBirth = new DateTime(1949, 6, 22),
+                    Height = 168,
+                    Hair = Hair.Blonde,
                     EyeColor = EyeColor.Blue
                 },
                 new Actor()
                 {
-                    Name = "Arnold Schwarzenegger",
+                    Name = "Angelina Jolie",
                     Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
+                    DateOfBirth = new DateTime(1975, 6, 4),
+                    Height = 173,
                     Hair = Hair.Brown,
+                    EyeColor = EyeColor.Green
+                },
+                new Actor()
+                {
+                    Name = "Susan Sarandon",
+                    Sex = Sex.Female,
+                    DateOfBirth = new DateTime(1946, 10, 4),
+                    Height = 170,
+                    Hair = Hair.Red,
+                    EyeColor = EyeColor.Brown
+                },
+                new Actor()
+                {
+                    Name = "Mila Kunis",
+                    Sex = Sex.Female,
+                    DateOfBirth = new DateTime(1983, 8, 14),
+                    Height = 163,
+                    Hair = Hair.Brown,
+                    EyeColor = EyeColor.Brown
+                },
+                new Actor()
+                {
+                    Name = "Sandra Bullock",
+                    Sex = Sex.Female,
+                    DateOfBirth = new DateTime(1964, 7, 26),
+                    Height = 171,
+                    Hair = Hair.Brown,
+                    EyeColor = EyeColor.Brown
+                },
+                new Actor()
+                {
+                    Name = "Cameron Diaz",
+                    Sex = Sex.Female,
+                    DateOfBirth = new DateTime(1972, 8, 30),
+                    Height = 175,
+                    Hair = Hair.Blonde,
                     EyeColor = EyeColor.Blue
                 },
                 new Actor()
                 {
-                    Name = "Arnold Schwarzenegger",
+                    Name = "Emma Watson",
                     Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
+                    DateOfBirth = new DateTime(1990, 4, 15),
+                    Height = 165,
                     Hair = Hair.Brown,
+                    EyeColor = EyeColor.Brown
+                },
+                new Actor()
+                {
+                    Name = "Uma Thurman",
+                    Sex = Sex.Female,
+                    DateOfBirth = new DateTime(1970, 4, 29),
+                    Height = 183,
+                    Hair = Hair.Blonde,
                     EyeColor = EyeColor.Blue
                 },
                 new Actor()
                 {
-                    Name = "Arnold Schwarzenegger",
+                    Name = "Salma Hayek",
                     Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
+                    DateOfBirth = new DateTime(1966, 9, 2),
+                    Height = 157,
                     Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
-                },
-                new Actor()
-                {
-                    Name = "Arnold Schwarzenegger",
-                    Sex = Sex.Female,
-                    DateOfBirth = new DateTime(1947, 7, 30),
-                    Height = 188,
-                    Hair = Hair.Brown,
-                    EyeColor = EyeColor.Blue
+                    EyeColor = EyeColor.Brown
                 }
             };
             #endregion
@@ -445,6 +352,7 @@ namespace MovieWebApp.Data.Initialization
                 }
             };
             #endregion
+            #region Movies
             var movies = new List<Movie>()
             {
                 new Movie()
@@ -483,11 +391,33 @@ namespace MovieWebApp.Data.Initialization
                     Genre = genres[6]
                 }
             };
+            #endregion
+            #region MovieConnections
             movies[0].Director = directors[0];
             movies[0].Actors.Add(actors[0]);
 
             movies[1].Director = directors[4];
             movies[1].Actors.Add(actors[0]);
+            movies[1].Actors.Add(actors[19]);
+
+            movies[2].Director = directors[1];
+            movies[2].Actors.Add(actors[0]);
+            movies[2].Actors.Add(actors[8]);
+
+            movies[3].Director = directors[2];
+            movies[3].Actors.Add(actors[2]);
+            movies[3].Actors.Add(actors[14]);
+
+            movies[4].Director = directors[5];
+            movies[4].Actors.Add(actors[7]);
+            movies[4].Actors.Add(actors[18]);
+            movies[4].Actors.Add(actors[28]);
+#endregion
+
+            context.Genres.AddRange(genres);
+            context.Actors.AddRange(actors);
+            context.Directors.AddRange(directors);
+            context.Movies.AddRange(movies);
             base.Seed(context);
         }
     }

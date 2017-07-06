@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using MovieWebApp.Data.Initialization;
 using MovieWebApp.Data.Models.Entities;
 
 namespace MovieWebApp.Data.Models
