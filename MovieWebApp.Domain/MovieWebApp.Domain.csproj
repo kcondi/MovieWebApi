@@ -50,6 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ActorRepository.cs" />
+    <Compile Include="Repositories\DirectorRepository.cs" />
+    <Compile Include="Repositories\GenreRepository.cs" />
+    <Compile Include="Repositories\MovieListRepository.cs" />
+    <Compile Include="Repositories\MovieRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MovieWebApp.Data\MovieWebApp.Data.csproj">
