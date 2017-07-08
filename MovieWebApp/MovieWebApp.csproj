@@ -128,14 +128,16 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Scripts\app\movielists\" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -146,8 +148,15 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\app.config.js" />
     <Content Include="Scripts\app\app.module.js" />
+    <Content Include="Scripts\app\common\movies.repository.js" />
+    <Content Include="Scripts\app\details\details.controller.js" />
+    <Content Include="Scripts\app\details\details.state.js" />
+    <Content Include="Scripts\app\details\details.template.html" />
     <Content Include="Scripts\app\home\home.state.js" />
     <Content Include="Scripts\app\home\home.template.html" />
+    <Content Include="Scripts\app\movies\movies.controller.js" />
+    <Content Include="Scripts\app\movies\movies.state.js" />
+    <Content Include="Scripts\app\movies\movies.template.html" />
     <Content Include="Scripts\vendor\angular-local-storage.js" />
     <Content Include="Scripts\vendor\angular-ui-router.js" />
     <Content Include="Scripts\vendor\angular.js" />

@@ -2,7 +2,7 @@
     $stateProvider
         .state('details',
             {
-                url: '/details/:id',
+                url: 'movies/details/:id',
                 controller: 'MovieDetailsController',
                 templateUrl: '/Scripts/app/details/details.template.html'
             });

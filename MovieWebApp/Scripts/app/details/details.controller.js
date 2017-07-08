@@ -1,4 +1,5 @@
-﻿angular.module('app').controller('MovieDetailsController', function($scope, moviesRepository) {
+﻿angular.module('app').controller('MovieDetailsController',
+    function ($scope, moviesRepository) {
     $scope.isLoaded = false;
 
     moviesRepository.getMovieDetails().then(function(movieDetails) {
