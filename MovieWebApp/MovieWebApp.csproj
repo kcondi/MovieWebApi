@@ -146,6 +146,8 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\app.config.js" />
     <Content Include="Scripts\app\app.module.js" />
+    <Content Include="Scripts\app\home\home.state.js" />
+    <Content Include="Scripts\app\home\home.template.html" />
     <Content Include="Scripts\vendor\angular-local-storage.js" />
     <Content Include="Scripts\vendor\angular-ui-router.js" />
     <Content Include="Scripts\vendor\angular.js" />

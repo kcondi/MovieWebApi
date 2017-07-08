@@ -1,0 +1,10 @@
+﻿<div ng-show="isLoaded">
+    <div ng-repeat="movie in movies">
+        {{movie.Title}}
+        {{movie.Year}}
+        {{movie.Hashtag}}
+        {{movie.Genre}}
+        <button ng-click="goToMovieDetails(movie.Id)">Details</button>
+        <button ng-click="deleteMovie(movie.Id)">Delete</button>
+    </div>
+</div>

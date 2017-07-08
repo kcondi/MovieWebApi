@@ -6,8 +6,6 @@ namespace MovieWebApp.Controllers
     {
         public ActionResult Shell()
         {
-            ViewBag.Title = "Home Page";
-
             return View();
         }
     }
