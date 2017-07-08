@@ -3,6 +3,6 @@
         .state('home',
         {
             url: '/',
-            templateUrl: '/scripts/app/home/home.template.html'
+            templateUrl: '/Scripts/app/home/home.template.html'
         });
 });
