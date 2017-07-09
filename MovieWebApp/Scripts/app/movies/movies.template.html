@@ -4,7 +4,7 @@
         {{movie.Year}}
         {{movie.Hashtag}}
         {{movie.Genre.Name}} 
-        <button ui-sref="details{Id: movie.Id}">Details</button>
+        <button ui-sref="details({id: movie.id})">Details</button>
         <button ng-click="deleteMovie(movie.Id)">Delete</button>
     </div>
 </div>

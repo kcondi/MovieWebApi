@@ -1,8 +1,8 @@
 ﻿angular.module('app').controller('MovieDetailsController',
-    function ($scope, moviesRepository) {
+    function ($scope, $state, $stateParams, moviesRepository) {
     $scope.isLoaded = false;
 
-    moviesRepository.getMovieDetails().then(function(movieDetails) {
+    moviesRepository.getMovieDetails($stateParams.Id).then(function(movieDetails) {
         $scope.chosenMovie = movieDetails;
         $scope.isLoaded = true;
     });
