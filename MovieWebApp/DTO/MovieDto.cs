@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Web;
 using MovieWebApp.Data.Models.Entities;
 
 namespace MovieWebApp.DTO
@@ -17,9 +14,8 @@ namespace MovieWebApp.DTO
                 Title = movie.Title,
                 Year = movie.Year,
                 Hashtag = movie.Hashtag,
-                Genre = movie.Genre,
-                Director = movie.DirectorId.Single(),
-
+                Genre = GenreDto.FromGenre(movie.Genre),
+                Director = DirectorDto.FromDirector(movie.Director),
                 Actors = movie.Actors
                 .Select(ActorDto.FromActor)
                 .ToList()
@@ -32,8 +28,8 @@ namespace MovieWebApp.DTO
         public ICollection<MovieList> MovieLists { get; set; }
         public ICollection<ActorDto> Actors { get; set; }
         public int GenreId { get; set; }
-        public Genre Genre { get; set; }
+        public GenreDto Genre { get; set; }
         public int DirectorId { get; set; }
-        public Director Director { get; set; }
+        public DirectorDto Director { get; set; }
     }
 }

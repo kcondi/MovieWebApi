@@ -38,7 +38,7 @@ namespace MovieWebApp.Controllers
         public IHttpActionResult GetMovieDetails(int id)
         {
         var movieDetails = _movieRepository.GetMovieDetails(id);
-         var movie = MovieDto.FromMovie(movieDetails);
+        var movie = MovieDto.FromMovie(movieDetails);
         return Ok(movie);
          //   var details = _movieRepository.GetMovieDetails(id);
           //  return Ok(details);

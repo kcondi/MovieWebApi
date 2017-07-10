@@ -140,6 +140,7 @@
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="DTO\ActorDto.cs" />
     <Compile Include="DTO\DirectorDto.cs" />
+    <Compile Include="DTO\GenreDto.cs" />
     <Compile Include="DTO\MovieDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
