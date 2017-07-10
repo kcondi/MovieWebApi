@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using MovieWebApp.Data.Models.Entities;
 using MovieWebApp.Domain.Repositories;
+using MovieWebApp.DTO;
 
 namespace MovieWebApp.Controllers
 {
@@ -33,10 +34,14 @@ namespace MovieWebApp.Controllers
         }
 
         [HttpGet]
-        [Route("details/{movieId}")]
+        [Route("details")]
         public IHttpActionResult GetMovieDetails(int id)
         {
-            return Ok(_movieRepository.GetMovieDetails(id));
+        var movieDetails = _movieRepository.GetMovieDetails(id);
+         var movie = MovieDto.FromMovie(movieDetails);
+        return Ok(movie);
+         //   var details = _movieRepository.GetMovieDetails(id);
+          //  return Ok(details);
         }
 
         [HttpDelete]

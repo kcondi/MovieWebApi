@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
+using System.Security.Cryptography.X509Certificates;
 using MovieWebApp.Data.Models;
 using MovieWebApp.Data.Models.Entities;
 
@@ -23,6 +24,7 @@ namespace MovieWebApp.Domain.Repositories
         public Movie GetMovieDetails(int movieToGetId)
         {
             return _context.Movies
+                .Include(x => x.Genre)
                 .Include(x => x.Actors)
                 .Include(x => x.Director)
                 .SingleOrDefault(movie => movie.Id == movieToGetId);

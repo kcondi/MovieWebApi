@@ -6,7 +6,7 @@
         }
 
         function getMovieDetails(id) {
-            return $http.get('/movies/details/:id',
+            return $http.get('/movies/details',
                 {
                     params: {
                         id: id
