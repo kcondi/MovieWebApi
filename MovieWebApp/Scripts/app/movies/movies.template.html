@@ -1,12 +1,11 @@
 ﻿<div ui-view>
-<div ng-show="isLoaded">
-    <div ng-repeat="movie in movies">
-        {{movie.Title}}
-        {{movie.Year}}
-        {{movie.Hashtag}}
-        {{movie.Genre.Name}} 
-        <button ui-sref="details({id: movie.Id})">Details</button>
-        <button ng-click="deleteMovie(movie.Id)">Delete</button>
+    <div ng-show="isLoaded">
+        <div ng-repeat="movie in movies">
+            {{movie.Title}}
+            {{movie.Year}}
+            <button ui-sref="details({id: movie.Id})">Details</button>
+            <button ng-click="deleteMovie(movie.Id)">Delete</button>
+        </div>
+        <button ui-sref="addmovie">Add</button>
     </div>
-</div>
 </div>

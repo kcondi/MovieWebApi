@@ -1,4 +1,6 @@
-﻿using MovieWebApp.Data.Models;
+﻿using System.Collections.Generic;
+using System.Linq;
+using MovieWebApp.Data.Models;
 using MovieWebApp.Data.Models.Entities;
 
 namespace MovieWebApp.Domain.Repositories
@@ -15,6 +17,11 @@ namespace MovieWebApp.Domain.Repositories
         public Genre GetGenre(int genreToGetId)
         {
             return _context.Genres.Find(genreToGetId);
+        }
+
+        public List<Genre> GetAllGenres()
+        {
+            return _context.Genres.ToList();
         }
     }
 }

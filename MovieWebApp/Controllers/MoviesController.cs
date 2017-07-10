@@ -51,5 +51,26 @@ namespace MovieWebApp.Controllers
             _movieRepository.DeleteMovie(id);
             return Ok();
         }
+
+        [HttpPost]
+        [Route("add")]
+        public IHttpActionResult AddMovie(Movie movieToAdd)
+        {
+            _movieRepository.AddMovie(movieToAdd);
+            return Ok();
+        }
+
+        [HttpGet]
+        [Route("add")]
+        public IHttpActionResult GetActorsGenresDirectors()
+        {
+            var allObjects = new
+            {
+                Actors=_actorRepository.GetAllActors(),
+                Directors=_directorRepository.GetAllDirectors(),
+                Genres=_genreRepository.GetAllGenres()
+            };
+            return Ok(allObjects);
+        }
     }
 }

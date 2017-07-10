@@ -3,7 +3,6 @@
         $scope.isLoaded = false;
 
     moviesRepository.getMovieDetails($stateParams.id).then(function(movieDetails) {
-        console.log(movieDetails);
         $scope.chosenMovie = movieDetails.data;
         $scope.isLoaded = true;
     });

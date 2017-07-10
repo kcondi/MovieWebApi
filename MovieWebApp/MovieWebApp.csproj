@@ -150,8 +150,13 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\app\addmovie\addmovie.controller.js" />
+    <Content Include="Scripts\app\addmovie\addmovie.state.js" />
+    <Content Include="Scripts\app\addmovie\addmovie.template.html" />
     <Content Include="Scripts\app\app.config.js" />
     <Content Include="Scripts\app\app.module.js" />
+    <Content Include="Scripts\app\common\actors.repository.js" />
+    <Content Include="Scripts\app\common\directors.repository.js" />
     <Content Include="Scripts\app\common\movies.repository.js" />
     <Content Include="Scripts\app\details\details.controller.js" />
     <Content Include="Scripts\app\details\details.state.js" />

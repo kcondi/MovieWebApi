@@ -23,9 +23,19 @@
                 });
         }
 
+        function getActorsGenresDirectors() {
+            return $http.get('/movies/add');
+        }
+
+        function addMovie(movie) {
+            return $http.post('/movies/add', movie);
+        }
+
         return {
             getAllMovies: getAllMovies,
             getMovieDetails: getMovieDetails,
-            deleteMovie: deleteMovie
+            deleteMovie: deleteMovie,
+            getActorsGenresDirectors: getActorsGenresDirectors,
+            addMovie: addMovie
         }
     });

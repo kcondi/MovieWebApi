@@ -1,16 +1,18 @@
-﻿    Title: {{chosenMovie.Title}}
-    <br/>
+﻿<div ng-show="isLoaded">
+    Title: {{chosenMovie.Title}}
+    <br />
     Year: {{chosenMovie.Year}}
-    <br/>
+    <br />
     Hashtag: {{chosenMovie.Hashtag}}
-    <br/>
+    <br />
     Genre: {{chosenMovie.Genre.Name}}
-    <br/>
+    <br />
     Director: {{chosenMovie.Director.Name}}
     <button ui-sref="director({Id: chosenMovie.Director.Id})">Details</button>
-    <br/>
+    <br />
     Actors:
     <div ng-repeat="actor in chosenMovie.Actors">
         {{actor.Name}}
         <button ui-sref="actor({Id: actor.Id})">Details</button>
     </div>
+</div>
