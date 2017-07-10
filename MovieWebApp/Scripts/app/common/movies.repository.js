@@ -27,8 +27,12 @@
             return $http.get('/movies/add');
         }
 
-        function addMovie(movie) {
-            return $http.post('/movies/add', movie);
+        function addMovie(newMovie) {
+            return $http.post('/movies/add', newMovie);
+        }
+
+        function editMovie(editedMovie) {
+            return $http.post('/movies/edit', editedMovie);
         }
 
         return {
@@ -36,6 +40,7 @@
             getMovieDetails: getMovieDetails,
             deleteMovie: deleteMovie,
             getActorsGenresDirectors: getActorsGenresDirectors,
-            addMovie: addMovie
+            addMovie: addMovie,
+            editMovie: editMovie
         }
     });

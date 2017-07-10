@@ -72,5 +72,13 @@ namespace MovieWebApp.Controllers
             };
             return Ok(allObjects);
         }
+
+        [HttpPost]
+        [Route("edit")]
+        public IHttpActionResult EditMovie(Movie editedMovie)
+        {
+            _movieRepository.EditMovie(editedMovie);
+            return Ok();
+        }
     }
 }

@@ -1,0 +1,31 @@
+﻿<div ng-show="isLoaded">
+    Add a movie: <br />
+    Title: <input type="text" ng-model="title" /> <br />
+    Year:  <input type="number" ng-model="year" /> <br />
+    Hashtag: <input type="text" ng-model="hashtag" /> <br />
+    Genre: {{chosenMovie.Genre.Name}} <button ng-click="removeGenre()">Remove</button>
+    Director: {{chosenMovie.Director.Name}} <button ng-click="removeDirector()">Remove</button>
+    Actors: <div ng-repeat="actor in chosenMovie.Actors">
+        {{actor.Name}}
+        <button ng-click="removeActor(actor)">Remove</button>
+    </div>
+    Choose actors:
+    <div ng-repeat="actor in allActors">
+        {{actor.Name}}
+        <button ng-click="addActor(actor)">Add</button>
+    </div>
+    <div ng-if="!isGenreAdded">
+        Choose genre:
+        <div ng-repeat="genre in allGenres">
+            {{genre.Name}}
+            <button ng-click="addGenre(genre)">Add</button>
+        </div>
+    </div>
+    <div ng-if="!isDirectorAdded">
+        Choose director:
+        <div ng-repeat="director in allDirectors">
+            {{director.Name}}
+            <button ng-click="addDirector(director)">Add</button>
+        </div>
+    </div>
+</div>

@@ -37,8 +37,7 @@
                 Actors: $scope.actors
             };
             moviesRepository.addMovie(newMovie).then(function () {
-                $scope.movies.push(newMovie);
-                $state.go('movies');
+                $state.go('movies', {}, {reload: true});
             });
         }
     });

@@ -161,6 +161,9 @@
     <Content Include="Scripts\app\details\details.controller.js" />
     <Content Include="Scripts\app\details\details.state.js" />
     <Content Include="Scripts\app\details\details.template.html" />
+    <Content Include="Scripts\app\editmovie\editmovie.controller.js" />
+    <Content Include="Scripts\app\editmovie\editmovie.state.js" />
+    <Content Include="Scripts\app\editmovie\editmovie.template.html" />
     <Content Include="Scripts\app\home\home.state.js" />
     <Content Include="Scripts\app\home\home.template.html" />
     <Content Include="Scripts\app\movies\movies.controller.js" />
