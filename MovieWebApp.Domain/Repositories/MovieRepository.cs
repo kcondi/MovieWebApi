@@ -38,13 +38,16 @@ namespace MovieWebApp.Domain.Repositories
 
         public void EditMovie(Movie editedMovie)
         {
-            var movieToEdit = _context.Movies.Find(editedMovie.Id);
+            var movieToEdit = _context.Movies.Include(x => x.Actors).SingleOrDefault(movie => movie.Id == editedMovie.Id);
             if (movieToEdit == null)
                 return;
             movieToEdit.Title = editedMovie.Title;
             movieToEdit.Genre = editedMovie.Genre;
             movieToEdit.Hashtag = editedMovie.Hashtag;
             movieToEdit.Year = editedMovie.Year;
+            movieToEdit.Actors = editedMovie.Actors;
+            movieToEdit.Director = editedMovie.Director;
+            movieToEdit.Genre = editedMovie.Genre;
             _context.SaveChanges();
         }
 

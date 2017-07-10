@@ -31,7 +31,16 @@
             return $http.post('/movies/add', newMovie);
         }
 
-        function editMovie(editedMovie) {
+        function getActorsGenresDirectorsMovie(id) {
+            return $http.get('movies/edit',
+                {
+                    params: {
+                        id: id
+                    }
+                });
+        }
+
+        function editExistingMovie(editedMovie) {
             return $http.post('/movies/edit', editedMovie);
         }
 
@@ -41,6 +50,7 @@
             deleteMovie: deleteMovie,
             getActorsGenresDirectors: getActorsGenresDirectors,
             addMovie: addMovie,
-            editMovie: editMovie
+            getActorsGenresDirectorsMovie: getActorsGenresDirectorsMovie,
+            editExistingMovie: editExistingMovie
         }
     });

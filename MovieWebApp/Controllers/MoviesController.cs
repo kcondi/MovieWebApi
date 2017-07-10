@@ -37,11 +37,9 @@ namespace MovieWebApp.Controllers
         [Route("details")]
         public IHttpActionResult GetMovieDetails(int id)
         {
-        var movieDetails = _movieRepository.GetMovieDetails(id);
-        var movie = MovieDto.FromMovie(movieDetails);
-        return Ok(movie);
-         //   var details = _movieRepository.GetMovieDetails(id);
-          //  return Ok(details);
+            var movieDetails = _movieRepository.GetMovieDetails(id);
+            var movie = MovieDto.FromMovie(movieDetails);
+            return Ok(movie);
         }
 
         [HttpDelete]
@@ -69,6 +67,20 @@ namespace MovieWebApp.Controllers
                 Actors=_actorRepository.GetAllActors(),
                 Directors=_directorRepository.GetAllDirectors(),
                 Genres=_genreRepository.GetAllGenres()
+            };
+            return Ok(allObjects);
+        }
+
+        [HttpGet]
+        [Route("edit")]
+        public IHttpActionResult GetActorsGenresDirectorsMovie(int id)
+        {
+            var allObjects = new
+            {
+                Actors = _actorRepository.GetAllActors(),
+                Directors = _directorRepository.GetAllDirectors(),
+                Genres = _genreRepository.GetAllGenres(),
+                Movie= MovieDto.FromMovie(_movieRepository.GetMovieDetails(id))
             };
             return Ok(allObjects);
         }

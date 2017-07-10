@@ -1,14 +1,22 @@
 ﻿<div ng-show="isLoaded">
-    Add a movie: <br />
-    Title: <input type="text" ng-model="title" /> <br />
+    Edit movie: <br />
+    Title: <input type="text" ng-model="title"/> <br />
     Year:  <input type="number" ng-model="year" /> <br />
     Hashtag: <input type="text" ng-model="hashtag" /> <br />
-    Genre: {{chosenMovie.Genre.Name}} <button ng-click="removeGenre()">Remove</button>
-    Director: {{chosenMovie.Director.Name}} <button ng-click="removeDirector()">Remove</button>
+    <div ng-show="isGenreAdded">
+     Genre: {{chosenMovie.Genre.Name}} 
+    <button ng-click="removeGenre()">Remove</button>
+    </div>
+    <br/>
+    <div ng-show="isDirectorAdded">
+    Director: {{chosenMovie.Director.Name}} 
+    <button ng-click="removeDirector()">Remove</button>
+    </div>
     Actors: <div ng-repeat="actor in chosenMovie.Actors">
         {{actor.Name}}
         <button ng-click="removeActor(actor)">Remove</button>
     </div>
+    <br/>
     Choose actors:
     <div ng-repeat="actor in allActors">
         {{actor.Name}}
@@ -28,4 +36,5 @@
             <button ng-click="addDirector(director)">Add</button>
         </div>
     </div>
+    <button ng-click="editMovie()">Edit</button>
 </div>

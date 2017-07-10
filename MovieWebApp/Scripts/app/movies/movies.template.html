@@ -5,7 +5,7 @@
             {{movie.Year}}
             <button ui-sref="details({id: movie.Id})">Details</button>
             <button ng-click="deleteMovie(movie.Id)">Delete</button>
-            <button ui-sref="editmovie{id: movie.Id}">Edit</button>
+            <button ui-sref="editmovie({id: movie.Id})">Edit</button>
         </div>
         <button ui-sref="addmovie">Add</button>
     </div>

@@ -1,28 +1,25 @@
-﻿angular.module('app').controller('AddMovieController',
-    function ($scope, $state, $q, moviesRepository) {
+﻿angular.module('app').controller('EditMovieController',
+    function ($scope, $state, $stateParams, moviesRepository) {
         $scope.isGenreAdded = false;
         $scope.isDirectorAdded = false;
         $scope.isLoaded = false;
         $scope.actors = [];
 
-        var allDbInfo = moviesRepository.getActorsGenresDirectors().then(function (allInfo) {
+        moviesRepository.getActorsGenresDirectorsMovie($stateParams.id).then(function (allInfo) {
             $scope.allActors = allInfo.data.Actors;
             $scope.allDirectors = allInfo.data.Directors;
             $scope.allGenres = allInfo.data.Genres;
-        });
-
-        var allMovieInfo = moviesRepository.getMovieDetails($stateParams.id).then(function (movieDetails) {
-            $scope.chosenMovie = movieDetails.data;
-            $scope.actors = movieDetails.data.Actors;
-            $scope.director = movieDetails.data.Director;
-            $scope.genre = moviesRepository.data.Genre;
+            $scope.chosenMovie = allInfo.data.Movie;
+            $scope.title = allInfo.data.Movie.Title;
+            $scope.year = allInfo.data.Movie.Year;
+            $scope.hashtag = allInfo.data.Movie.Hashtag;
+            $scope.actors = allInfo.data.Movie.Actors;
+            $scope.director = allInfo.data.Movie.Director;
+            $scope.genre = allInfo.data.Movie.Genre;
             if ($scope.director)
                 $scope.isDirectorAdded = true;
             if ($scope.genre)
                 $scope.isGenreAdded = true;
-        });
-
-        $q.all([allDbInfo, allMovieInfo]).then(function() {
             $scope.isLoaded = true;
         });
 
@@ -37,26 +34,31 @@
 
         $scope.addGenre = function (genre) {
             $scope.genre = genre;
+            $scope.chosenMovie.Genre.Name = genre.Name;
             $scope.isGenreAdded = true;
         }
 
         $scope.removeGenre = function() {
             $scope.genre = null;
+            $scope.chosenMovie.Genre.Name = "";
             $scope.isGenreAdded = false;
         }
 
         $scope.addDirector = function (director) {
             $scope.director = director;
+            $scope.chosenMovie.Director.Name = director.Name;
             $scope.isDirectorAdded = true;
         }
 
         $scope.removeDirector = function() {
             $scope.director = null;
+            $scope.chosenMovie.Director.Name = "";
             $scope.isDirectorAdded = false;
         }
 
         $scope.editMovie = function () {
             var editedMovie = {
+                Id: $scope.chosenMovie.Id,
                 Title: $scope.title,
                 Year: $scope.year,
                 Hashtag: $scope.hashtag,
@@ -64,7 +66,7 @@
                 Director: $scope.director,
                 Actors: $scope.actors
             };
-            moviesRepository.editMovie(editedMovie).then(function () {
+            moviesRepository.editExistingMovie(editedMovie).then(function () {
                 $state.go('movies', {}, { reload: true });
             });
         }
