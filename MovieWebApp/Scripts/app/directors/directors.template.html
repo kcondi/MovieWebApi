@@ -1,0 +1,7 @@
+﻿Director details:<br/>
+Name: {{chosenDirector.Name}} <br/>
+Date of birth: {{chosenDirector.DateOfBirth | date: 'dd/MM/yyyy'}} <br/>
+Movies directed:
+<div ng-repeat="movie in chosenDirector.Movies">
+    {{movie.Title}}
+</div>

@@ -16,7 +16,9 @@ namespace MovieWebApp.Domain.Repositories
         private readonly MovieContext _context;
         public Actor GetActor(int actorToGetId)
         {
-            return _context.Actors.Include(actor => actor.Movies).FirstOrDefault(actor => actor.Id == actorToGetId);
+            return _context.Actors
+                .Include(actor => actor.Movies)
+                .FirstOrDefault(actor => actor.Id == actorToGetId);
         }
 
         public List<Actor> GetAllActors()

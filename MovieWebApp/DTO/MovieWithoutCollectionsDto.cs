@@ -4,16 +4,16 @@ using System.Linq;
 using System.Web;
 using MovieWebApp.Data.Models.Entities;
 
-namespace MovieWebApp.DTO.ActorDetails
+namespace MovieWebApp.DTO
 {
-    public class MovieDto
+    public class MovieWithoutCollectionsDto
     {
-        public static MovieDto FromMovie(Movie movie)
+        public static MovieWithoutCollectionsDto FromMovie(Movie movie)
         {
-            return new MovieDto()
+            return new MovieWithoutCollectionsDto()
             {
                 Id = movie.Id,
-                Title = movie.Title,
+                Title = movie.Title
             };
         }
         public int Id { get; set; }

@@ -137,10 +137,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ActorsController.cs" />
+    <Compile Include="Controllers\DirectorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="DTO\ActorDetails\ActorDto.cs" />
-    <Compile Include="DTO\ActorDetails\MovieDto.cs" />
+    <Compile Include="DTO\MovieWithoutCollectionsDto.cs" />
+    <Compile Include="DTO\DirectorDetails\DirectorDto.cs" />
     <Compile Include="DTO\MovieDetails\ActorDto.cs" />
     <Compile Include="DTO\MovieDetails\DirectorDto.cs" />
     <Compile Include="DTO\MovieDetails\GenreDto.cs" />
@@ -167,6 +169,9 @@
     <Content Include="Scripts\app\details\details.controller.js" />
     <Content Include="Scripts\app\details\details.state.js" />
     <Content Include="Scripts\app\details\details.template.html" />
+    <Content Include="Scripts\app\directors\directors.controller.js" />
+    <Content Include="Scripts\app\directors\directors.state.js" />
+    <Content Include="Scripts\app\directors\directors.template.html" />
     <Content Include="Scripts\app\editmovie\editmovie.controller.js" />
     <Content Include="Scripts\app\editmovie\editmovie.state.js" />
     <Content Include="Scripts\app\editmovie\editmovie.template.html" />

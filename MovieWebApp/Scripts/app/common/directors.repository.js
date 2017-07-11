@@ -1,11 +1,16 @@
 ﻿angular.module('app').service('directorsRepository',
     function ($http) {
 
-        function getAllDirectors() {
-            return $http.get('/movies/add');
+        function getDirectorDetails(id) {
+            return $http.get('/directors',
+                {
+                    params: {
+                        id: id
+                    }
+                });
         }
 
         return {
-            getAllDirectors: getAllDirectors
+            getDirectorDetails: getDirectorDetails
         }
     });

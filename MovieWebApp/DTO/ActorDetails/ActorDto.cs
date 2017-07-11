@@ -22,7 +22,7 @@ namespace MovieWebApp.DTO.ActorDetails
                 Hair = actor.Hair,
                 EyeColor = actor.EyeColor,
                 Movies= actor.Movies
-                    .Select(MovieDto.FromMovie)
+                    .Select(MovieWithoutCollectionsDto.FromMovie)
                     .ToList()
             };
         }
@@ -37,6 +37,6 @@ namespace MovieWebApp.DTO.ActorDetails
         public Hair Hair { get; set; }
         [JsonConverter(typeof(StringEnumConverter))]
         public EyeColor EyeColor { get; set; }
-        public ICollection<MovieDto> Movies { get; set; }
+        public ICollection<MovieWithoutCollectionsDto> Movies { get; set; }
     }
 }
