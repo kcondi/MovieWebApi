@@ -24,9 +24,9 @@ namespace MovieWebApp.Domain.Repositories
         public Movie GetMovieDetails(int movieToGetId)
         {
             return _context.Movies
-                .Include(x => x.Genre)
-                .Include(x => x.Actors)
-                .Include(x => x.Director)
+                .Include(movie => movie.Genre)
+                .Include(movie => movie.Actors)
+                .Include(movie => movie.Director)
                 .SingleOrDefault(movie => movie.Id == movieToGetId);
         }
 
@@ -60,6 +60,19 @@ namespace MovieWebApp.Domain.Repositories
                 return;
             _context.Movies.Remove(movieToDelete);
             _context.SaveChanges();
+        }
+
+        public List<Movie> SearchForMovies(string searchText)
+        {
+            return _context.Movies
+                .Include(movie => movie.MovieLists)
+                .Include(movie => movie.Director)
+                .Where(movie => 
+                movie.Title.ToLower().StartsWith(searchText.ToLower()) ||
+                movie.Director.Name.ToLower().Contains(searchText.ToLower()) ||
+                movie.MovieLists.Any(movieList => 
+                movieList.Name.ToLower().StartsWith(searchText.ToLower())))
+                .ToList();
         }
     }
 }

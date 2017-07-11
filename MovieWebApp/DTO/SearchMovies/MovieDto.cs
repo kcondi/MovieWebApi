@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using MovieWebApp.Data.Models.Entities;
 using MovieWebApp.DTO.MovieDetails;
+using MovieListDto = MovieWebApp.DTO.MovieListDetails.MovieListDto;
 
-namespace MovieWebApp.DTO.MovieDetails
+namespace MovieWebApp.DTO.SearchMovies
 {
     public class MovieDto
     {
@@ -13,22 +16,15 @@ namespace MovieWebApp.DTO.MovieDetails
             {
                 Id = movie.Id,
                 Title = movie.Title,
-                Year = movie.Year,
-                Hashtag = movie.Hashtag,
-                Genre = GenreDto.FromGenre(movie.Genre),
                 Director = DirectorDto.FromDirector(movie.Director),
-                Actors = movie.Actors
-                .Select(ActorDto.FromActor)
-                .ToList()
+                MovieLists = movie.MovieLists
+                    .Select(MovieListDto.FromMovieList)
+                    .ToList()
             };
         }
         public int Id { get; set; }
         public string Title { get; set; }
-        public int Year { get; set; }
-        public string Hashtag { get; set; }
-        public ICollection<ActorDto> Actors { get; set; }
-        public int GenreId { get; set; }
-        public GenreDto Genre { get; set; }
+        public ICollection<MovieListDto> MovieLists { get; set; }
         public int DirectorId { get; set; }
         public DirectorDto Director { get; set; }
     }

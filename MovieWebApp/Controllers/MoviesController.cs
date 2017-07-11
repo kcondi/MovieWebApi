@@ -93,5 +93,14 @@ namespace MovieWebApp.Controllers
             _movieRepository.EditMovie(editedMovie);
             return Ok();
         }
+
+        [HttpGet]
+        [Route("search")]
+        public IHttpActionResult SearchMovies(string searchtext)
+        {
+            var filteredMovies = _movieRepository.SearchForMovies(searchtext);
+            var movies = filteredMovies.Select(DTO.SearchMovies.MovieDto.FromMovie).ToList();
+            return Ok(movies);
+        }
     }
 }

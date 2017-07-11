@@ -140,6 +140,8 @@
     <Compile Include="Controllers\MovieListsController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="DTO\ActorDetails\ActorDto.cs" />
+    <Compile Include="DTO\SearchMovies\MovieDto.cs" />
+    <Compile Include="DTO\SearchMovies\MovieListDto.cs" />
     <Compile Include="DTO\MovieListDetails\MovieListDto.cs" />
     <Compile Include="DTO\MovieWithoutCollectionsDto.cs" />
     <Compile Include="DTO\DirectorDetails\DirectorDto.cs" />

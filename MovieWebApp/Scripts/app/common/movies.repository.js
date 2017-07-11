@@ -32,7 +32,7 @@
         }
 
         function getActorsGenresDirectorsMovie(id) {
-            return $http.get('movies/edit',
+            return $http.get('/movies/edit',
                 {
                     params: {
                         id: id
@@ -44,6 +44,15 @@
             return $http.post('/movies/edit', editedMovie);
         }
 
+        function searchForMovies(searchtext) {
+            return $http.get('/movies/search',
+                {
+                    params: {
+                        searchtext: searchtext
+                    }
+                });
+        }
+
         return {
             getAllMovies: getAllMovies,
             getMovieDetails: getMovieDetails,
@@ -51,6 +60,7 @@
             getActorsGenresDirectors: getActorsGenresDirectors,
             addMovie: addMovie,
             getActorsGenresDirectorsMovie: getActorsGenresDirectorsMovie,
-            editExistingMovie: editExistingMovie
+            editExistingMovie: editExistingMovie,
+            searchForMovies: searchForMovies
         }
     });
