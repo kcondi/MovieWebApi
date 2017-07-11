@@ -7,6 +7,7 @@ using System.Web.Http;
 using MovieWebApp.Data.Models.Entities;
 using MovieWebApp.Domain.Repositories;
 using MovieWebApp.DTO;
+using MovieWebApp.DTO.MovieDetails;
 
 namespace MovieWebApp.Controllers
 {

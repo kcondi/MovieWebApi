@@ -1,0 +1,11 @@
+﻿Actor details: <br/>
+Name: {{chosenActor.Name}} <br/>
+Date of Birth: {{chosenActor.DateOfBirth | date: 'dd/MM/yyyy'}} <br/>
+Height: {{chosenActor.Height}} cm <br/>
+Sex: {{chosenActor.Sex}} <br/>
+Hair: {{chosenActor.Hair}} <br/>
+Eye color: {{chosenActor.EyeColor}} <br/>
+Movies acted in:
+<div ng-repeat="movie in chosenActor.Movies">
+    {{movie.Title}}
+</div>

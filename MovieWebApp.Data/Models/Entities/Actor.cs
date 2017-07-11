@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace MovieWebApp.Data.Models.Entities
 {
@@ -17,7 +19,6 @@ namespace MovieWebApp.Data.Models.Entities
      Red,
      Bald   
     }
-
     public enum EyeColor
     {
      Gray,
@@ -36,8 +37,12 @@ namespace MovieWebApp.Data.Models.Entities
         public string Name { get; set; }
         public DateTime DateOfBirth { get; set; }
         public int Height { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
         public Sex Sex { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
         public Hair Hair{ get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
         public EyeColor EyeColor { get; set; }
         public ICollection<Movie> Movies { get; set; }
     }

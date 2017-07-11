@@ -1,6 +1,6 @@
 ﻿using MovieWebApp.Data.Models.Entities;
 
-namespace MovieWebApp.DTO
+namespace MovieWebApp.DTO.MovieDetails
 {
     public class GenreDto
     {

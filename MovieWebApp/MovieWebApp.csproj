@@ -136,12 +136,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ActorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
-    <Compile Include="DTO\ActorDto.cs" />
-    <Compile Include="DTO\DirectorDto.cs" />
-    <Compile Include="DTO\GenreDto.cs" />
-    <Compile Include="DTO\MovieDto.cs" />
+    <Compile Include="DTO\ActorDetails\ActorDto.cs" />
+    <Compile Include="DTO\ActorDetails\MovieDto.cs" />
+    <Compile Include="DTO\MovieDetails\ActorDto.cs" />
+    <Compile Include="DTO\MovieDetails\DirectorDto.cs" />
+    <Compile Include="DTO\MovieDetails\GenreDto.cs" />
+    <Compile Include="DTO\MovieDetails\MovieDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -150,6 +153,9 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\app\actors\actors.controller.js" />
+    <Content Include="Scripts\app\actors\actors.state.js" />
+    <Content Include="Scripts\app\actors\actors.template.html" />
     <Content Include="Scripts\app\addmovie\addmovie.controller.js" />
     <Content Include="Scripts\app\addmovie\addmovie.state.js" />
     <Content Include="Scripts\app\addmovie\addmovie.template.html" />
