@@ -29,7 +29,7 @@ namespace MovieWebApp.Controllers
 
         [HttpGet]
         [Route("")]
-        public IHttpActionResult GetMovies()
+        public IHttpActionResult GetAllMovies()
         {
             return Ok(_movieRepository.GetAllMovies());
         }

@@ -39,7 +39,7 @@ namespace MovieWebApp.Domain.Repositories
         public void EditMovie(Movie editedMovie)
         {
             var movieToEdit = _context.Movies
-                .Include(x => x.Actors)
+                .Include(movie => movie.Actors)
                 .SingleOrDefault(movie => movie.Id == editedMovie.Id);
             if (movieToEdit == null)
                 return;

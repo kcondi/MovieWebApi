@@ -22,7 +22,7 @@ namespace MovieWebApp.Domain.Repositories
         public MovieList GetMovieListDetails(int movieListToGetId)
         {
             return _context.MovieLists
-                .Include(x => x.Movies)
+                .Include(movieList => movieList.Movies)
                 .SingleOrDefault(movieList => movieList.Id == movieListToGetId);
         }
         public void AddMovieList(MovieList movieListToAdd)
@@ -32,10 +32,13 @@ namespace MovieWebApp.Domain.Repositories
         }
         public void EditMovieList(MovieList editedMovieList)
         {
-            var movieListToEdit = _context.MovieLists.Find(editedMovieList.Id);
+            var movieListToEdit = _context.MovieLists
+                .Include(movieList => movieList.Movies)
+                .FirstOrDefault(movieList => movieList.Id == editedMovieList.Id);
             if (movieListToEdit == null)
                 return;
             movieListToEdit.Name = editedMovieList.Name;
+            movieListToEdit.Movies = editedMovieList.Movies;
             _context.SaveChanges();
         }
         public void DeleteMovieList(int movieListToDeleteId)

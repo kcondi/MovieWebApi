@@ -128,9 +128,7 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\app\movielists\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -139,8 +137,10 @@
     <Compile Include="Controllers\ActorsController.cs" />
     <Compile Include="Controllers\DirectorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MovieListsController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="DTO\ActorDetails\ActorDto.cs" />
+    <Compile Include="DTO\MovieListDetails\MovieListDto.cs" />
     <Compile Include="DTO\MovieWithoutCollectionsDto.cs" />
     <Compile Include="DTO\DirectorDetails\DirectorDto.cs" />
     <Compile Include="DTO\MovieDetails\ActorDto.cs" />
@@ -158,6 +158,9 @@
     <Content Include="Scripts\app\actors\actors.controller.js" />
     <Content Include="Scripts\app\actors\actors.state.js" />
     <Content Include="Scripts\app\actors\actors.template.html" />
+    <Content Include="Scripts\app\addmovielist\addmovielist.controller.js" />
+    <Content Include="Scripts\app\addmovielist\addmovielist.state.js" />
+    <Content Include="Scripts\app\addmovielist\addmovielist.template.html" />
     <Content Include="Scripts\app\addmovie\addmovie.controller.js" />
     <Content Include="Scripts\app\addmovie\addmovie.state.js" />
     <Content Include="Scripts\app\addmovie\addmovie.template.html" />
@@ -165,6 +168,7 @@
     <Content Include="Scripts\app\app.module.js" />
     <Content Include="Scripts\app\common\actors.repository.js" />
     <Content Include="Scripts\app\common\directors.repository.js" />
+    <Content Include="Scripts\app\common\movielists.repository.js" />
     <Content Include="Scripts\app\common\movies.repository.js" />
     <Content Include="Scripts\app\details\details.controller.js" />
     <Content Include="Scripts\app\details\details.state.js" />
@@ -172,11 +176,20 @@
     <Content Include="Scripts\app\directors\directors.controller.js" />
     <Content Include="Scripts\app\directors\directors.state.js" />
     <Content Include="Scripts\app\directors\directors.template.html" />
+    <Content Include="Scripts\app\editmovielist\editmovielist.controller.js" />
+    <Content Include="Scripts\app\editmovielist\editmovielist.state.js" />
+    <Content Include="Scripts\app\editmovielist\editmovielist.template.html" />
     <Content Include="Scripts\app\editmovie\editmovie.controller.js" />
     <Content Include="Scripts\app\editmovie\editmovie.state.js" />
     <Content Include="Scripts\app\editmovie\editmovie.template.html" />
     <Content Include="Scripts\app\home\home.state.js" />
     <Content Include="Scripts\app\home\home.template.html" />
+    <Content Include="Scripts\app\movielistdetails\movielistdetails.controller.js" />
+    <Content Include="Scripts\app\movielistdetails\movielistdetails.state.js" />
+    <Content Include="Scripts\app\movielistdetails\movielistdetails.template.html" />
+    <Content Include="Scripts\app\movielists\movielists.controller.js" />
+    <Content Include="Scripts\app\movielists\movielists.state.js" />
+    <Content Include="Scripts\app\movielists\movielists.template.html" />
     <Content Include="Scripts\app\movies\movies.controller.js" />
     <Content Include="Scripts\app\movies\movies.state.js" />
     <Content Include="Scripts\app\movies\movies.template.html" />
