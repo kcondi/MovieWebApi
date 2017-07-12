@@ -1,8 +1,8 @@
 ﻿angular.module('app').controller('MoviesController',
     function($scope, moviesRepository, localStorageService, getCurrentFavoritesService) {
         $scope.isLoaded = false;
-        $scope.movies = null;
-        $scope.favorites = null;
+        $scope.movies = [];
+        $scope.favorites = [];
 
         var allMoviesPromise = moviesRepository.getAllMovies();
 
@@ -36,7 +36,7 @@
         }
 
         $scope.favorite = function (movieToFavoriteId) {
-            if ($scope.favorites.indexOf(movieToFavoriteId) === -1)
+            if (~~$scope.favorites.indexOf(movieToFavoriteId))
                 $scope.favorites.push(movieToFavoriteId);
             localStorageService.set("favoritedMovies", $scope.favorites);
         }

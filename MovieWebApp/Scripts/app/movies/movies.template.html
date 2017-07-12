@@ -2,6 +2,7 @@
     <div ng-show="isLoaded">
         You can search movies by title, director name or movie list name. Enter any of those values into the box. <br/>
         <input type="text" ng-model="searchtext" ng-change="search(searchtext)" placeholder="Search movies"/><br/>
+        <input type="checkbox" ng-model="showOnlyFavorites"/>
         <div ng-repeat="movie in movies track by $index">
             <div ui-sref="details({id: movie.Id})">
                 {{movie.Title}}
