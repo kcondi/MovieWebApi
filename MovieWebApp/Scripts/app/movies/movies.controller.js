@@ -3,6 +3,7 @@
         $scope.isLoaded = false;
         $scope.movies = [];
         $scope.favorites = [];
+        $scope.isCheckboxChecked = false;
 
         var allMoviesPromise = moviesRepository.getAllMovies();
 
@@ -46,4 +47,7 @@
             localStorageService.set("favoritedMovies", $scope.favorites);
         }
 
+        $scope.changeChecked = function() {
+            $scope.isCheckboxChecked = !$scope.isCheckboxChecked;
+        }
     });

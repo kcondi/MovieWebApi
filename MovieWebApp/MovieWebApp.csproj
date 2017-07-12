@@ -170,6 +170,7 @@
     <Content Include="Scripts\app\app.module.js" />
     <Content Include="Scripts\app\common\actors.repository.js" />
     <Content Include="Scripts\app\common\directors.repository.js" />
+    <Content Include="Scripts\app\common\filters\favorites.filter.js" />
     <Content Include="Scripts\app\common\getcurrentfavorites.service.js" />
     <Content Include="Scripts\app\common\movielists.repository.js" />
     <Content Include="Scripts\app\common\movies.repository.js" />
