@@ -8,10 +8,6 @@ namespace MovieWebApp.Data.Models.Entities
         {
             Movies=new HashSet<Movie>();
         }
-        public override string ToString()
-        {
-            return Name;
-        }
         public int Id { get; set; }
         public string Name { get; set; }
         public ICollection<Movie> Movies { get; set; }

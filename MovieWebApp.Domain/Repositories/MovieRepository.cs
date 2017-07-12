@@ -21,6 +21,13 @@ namespace MovieWebApp.Domain.Repositories
             return _context.Movies.ToList();
         }
 
+        public List<Movie> GetAllMoviesWithGenres()
+        {
+            return _context.Movies
+                .Include(movie => movie.Genre)
+                .ToList();
+        }
+
         public Movie GetMovieDetails(int movieToGetId)
         {
             return _context.Movies
@@ -68,10 +75,13 @@ namespace MovieWebApp.Domain.Repositories
                 .Include(movie => movie.MovieLists)
                 .Include(movie => movie.Director)
                 .Where(movie => 
-                movie.Title.ToLower().StartsWith(searchText.ToLower()) ||
-                movie.Director.Name.ToLower().Contains(searchText.ToLower()) ||
+                movie.Title.ToLower()
+                .StartsWith(searchText.ToLower()) ||
+                movie.Director.Name.ToLower()
+                .Contains(searchText.ToLower()) ||
                 movie.MovieLists.Any(movieList => 
-                movieList.Name.ToLower().StartsWith(searchText.ToLower())))
+                movieList.Name.ToLower()
+                .StartsWith(searchText.ToLower())))
                 .ToList();
         }
     }

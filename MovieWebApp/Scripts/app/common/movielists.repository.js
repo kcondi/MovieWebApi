@@ -44,6 +44,11 @@
             return $http.post('/movielists/edit', editedMovieList);
         }
 
+        function addRandomList(numberOfMovies, genre) {
+            var indata = { 'numberOfMovies':numberOfMovies,'genre':genre}
+            return $http.post('movielists/addrandom', indata);
+        }
+
         return {
             getAllMovieLists: getAllMovieLists,
             getMovieListDetails: getMovieListDetails,
@@ -51,6 +56,7 @@
             getAllMovies: getAllMovies,
             addMovieList: addMovieList,
             getMoviesMovieList: getMoviesMovieList,
-            editExistingMovieList: editExistingMovieList
+            editExistingMovieList: editExistingMovieList,
+            addRandomList: addRandomList
         }
     });

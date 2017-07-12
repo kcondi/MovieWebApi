@@ -7,6 +7,7 @@ using System.Web.Http;
 using MovieWebApp.Data.Models.Entities;
 using MovieWebApp.Domain.Repositories;
 using MovieWebApp.DTO.MovieListDetails;
+using Newtonsoft.Json.Linq;
 
 namespace MovieWebApp.Controllers
 {
@@ -17,15 +18,24 @@ namespace MovieWebApp.Controllers
         {
             _movieListRepository=new MovieListRepository();
             _movieRepository=new MovieRepository();
+            _genreRepository=new GenreRepository();
+            _randomNumber=new Random();
         }
         private readonly MovieListRepository _movieListRepository;
         private readonly MovieRepository _movieRepository;
+        private readonly GenreRepository _genreRepository;
+        private readonly Random _randomNumber;
 
         [HttpGet]
         [Route("")]
-        public IHttpActionResult GetAllMovieLists()
+        public IHttpActionResult GetAllMovieListsAndGenres()
         {
-            return Ok(_movieListRepository.GetAllMovieLists());
+            var listsAndGenres = new
+            {
+                MovieLists = _movieListRepository.GetAllMovieLists(),
+                Genres = _genreRepository.GetAllGenres()
+            };
+            return Ok(listsAndGenres);
         }
 
         [HttpGet]
@@ -77,6 +87,32 @@ namespace MovieWebApp.Controllers
         public IHttpActionResult EditMovie(MovieList editedMovieList)
         {
             _movieListRepository.EditMovieList(editedMovieList);
+            return Ok();
+        }
+
+        [HttpPost]
+        [Route("addrandom")]
+        public IHttpActionResult AddRandomList(JObject indata)
+        {
+            var numberOfMovies = indata["numberOfMovies"].ToObject<int>();
+            var genre = indata["genre"].ToObject<Genre>();
+            var movies = _movieRepository.GetAllMoviesWithGenres();
+            var newMovieList = new MovieList()
+            {
+                Name = "Random List"
+            };
+            if (genre != null)
+                movies = movies.FindAll(movie => movie.Genre.Name == genre.Name);
+
+            for (var i = 0; i < numberOfMovies; i++)
+                {
+                    var randomMovie = movies[_randomNumber.Next(movies.Count)];
+                    newMovieList.Movies.Add(randomMovie);
+                    movies.Remove(randomMovie);
+                    if (!movies.Any())
+                        break;
+                }
+            _movieListRepository.AddMovieList(newMovieList);
             return Ok();
         }
     }

@@ -6,6 +6,15 @@
             <button ng-click="deleteMovieList(movieList.Id)">Delete</button>
             <button ui-sref="editmovielist({id: movieList.Id})">Edit</button>
         </div>
-        <button ui-sref="addmovielist">Add</button>
+        <button ui-sref="addmovielist">Add</button> <br/>
+        Create random movie list:<br/>
+        Number of movies: <input type="number" ng-model="numberOfMovies"/> <br/>
+        Genre: 
+        <div ng-repeat="genre in allGenres" ng-if="!isGenreChosen">
+            {{genre.Name}}
+            <button ng-click="chooseGenre(genre)">Choose</button>
+        </div>
+        <br/>
+        <button ng-click="randomMovieList(numberOfMovies)">Add random list</button>
     </div>
 </div>

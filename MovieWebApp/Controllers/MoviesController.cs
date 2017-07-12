@@ -63,13 +63,13 @@ namespace MovieWebApp.Controllers
         [Route("add")]
         public IHttpActionResult GetActorsGenresDirectors()
         {
-            var allObjects = new
+            var actorsGenresDirectors = new
             {
                 Actors=_actorRepository.GetAllActors(),
-                Directors=_directorRepository.GetAllDirectors(),
-                Genres=_genreRepository.GetAllGenres()
+                Genres = _genreRepository.GetAllGenres(),
+                Directors =_directorRepository.GetAllDirectors()
             };
-            return Ok(allObjects);
+            return Ok(actorsGenresDirectors);
         }
 
         [HttpGet]
