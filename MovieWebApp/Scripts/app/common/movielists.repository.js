@@ -45,7 +45,7 @@
         }
 
         function addRandomList(numberOfMovies, genre) {
-            var indata = { 'numberOfMovies':numberOfMovies,'genre':genre}
+            var indata = {'numberOfMovies':numberOfMovies,'genre':genre}
             return $http.post('movielists/addrandom', indata);
         }
 

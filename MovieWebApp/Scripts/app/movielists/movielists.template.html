@@ -1,6 +1,7 @@
 ﻿<div ui-view>
     <div ng-show="isLoaded">
         <div ng-repeat="movieList in movieLists">
+            <div ui-sref="movielistdetails({id: movieList.Id})"></div>
             {{movieList.Name}}
             <button ui-sref="movielistdetails({id: movieList.Id})">Details</button>
             <button ng-click="deleteMovieList(movieList.Id)">Delete</button>
@@ -11,9 +12,8 @@
         Number of movies: <input type="number" ng-model="numberOfMovies"/> <br/>
         <div ng-if="!isGenreChosen">
             Genre*: 
-            <div ng-repeat="genre in allGenres" ng-if="!isGenreChosen">
+            <div ng-repeat="genre in allGenres" ng-if="!isGenreChosen" ng-click="chooseGenre(genre)">
                 {{genre.Name}}
-                <button ng-click="chooseGenre(genre)">Choose</button>
             </div> 
         </div>      
         <br/>
@@ -22,5 +22,7 @@
         *If you don't choose a genre, movies from all genres will be selected.
         <br/>
         Note that if you select a genre that isn't present on any movie the selection will again be from all genres.
+        <br/>
+        Also, if there aren't enough movies to meet the specified number, the list will contain how many movies there is.
     </div>
 </div>

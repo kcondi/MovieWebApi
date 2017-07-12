@@ -3,11 +3,16 @@
         You can search movies by title, director name or movie list name. Enter any of those values into the box. <br/>
         <input type="text" ng-model="searchtext" ng-change="search(searchtext)" placeholder="Search movies"/><br/>
         <div ng-repeat="movie in movies track by $index">
-            {{movie.Title}}
-            {{movie.Year}}
-            <button ui-sref="details({id: movie.Id})">Details</button>
-            <button ng-click="deleteMovie(movie.Id)">Delete</button>
-            <button ui-sref="editmovie({id: movie.Id})">Edit</button>
+            <div ui-sref="details({id: movie.Id})">
+                {{movie.Title}}
+                {{movie.Year}} 
+            </div>
+            <img src="http://www.freeiconspng.com/uploads/trash-can-icon-24.png" height="20" width="20" ng-click="deleteMovie(movie.Id)"/>
+            <img src="https://image.flaticon.com/icons/svg/61/61456.svg" height="20" width="20" ui-sref="editmovie({id: movie.Id})"/>        
+            <img src="http://freevector.co/wp-content/uploads/2014/02/13595-empty-star1.png" height="20" width="20"
+                 ng-click="favorite(movie.Id)" ng-if="!isFavorited(movie.Id)" />
+            <img src="https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/keditbookmarks.png" height="20" width="20"
+                 ng-click="unfavorite(movie.Id)" ng-if="isFavorited(movie.Id)" />
         </div>
         <button ui-sref="addmovie">Add</button>
     </div>
