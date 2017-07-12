@@ -1,11 +1,11 @@
 ﻿<div ui-view>
     <div ng-show="isLoaded">
         <div ng-repeat="movieList in movieLists">
-            <div ui-sref="movielistdetails({id: movieList.Id})"></div>
-            {{movieList.Name}}
-            <button ui-sref="movielistdetails({id: movieList.Id})">Details</button>
-            <button ng-click="deleteMovieList(movieList.Id)">Delete</button>
-            <button ui-sref="editmovielist({id: movieList.Id})">Edit</button>
+            <div ui-sref="movielistdetails({id: movieList.Id})">
+                {{movieList.Name}}
+            </div>
+            <img src="http://www.freeiconspng.com/uploads/trash-can-icon-24.png" height="20" width="20" ng-click="deleteMovieList(movieList.Id)"/>
+            <img src="https://image.flaticon.com/icons/svg/61/61456.svg" height="20" width="20" ui-sref="editmovielist({id: movieList.Id})"/>  
         </div>
         <button ui-sref="addmovielist">Add</button> <br/>
         Create random movie list:<br/>

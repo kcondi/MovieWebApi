@@ -5,7 +5,9 @@
     Hashtag: <input type="text" ng-model="hashtag" /> <br />
     Choose actors:
     <div ng-repeat="actor in allActors">
-        {{actor.Name}}
+        <div ui-sref="actors({id: actor.Id})">
+            {{actor.Name}}
+        </div>
         <button ng-click="addActor(actor)">Add</button>
     </div>
     <div ng-if="!isGenreAdded">
@@ -18,7 +20,9 @@
     <div ng-if="!isDirectorAdded">
     Choose director:
         <div ng-repeat="director in allDirectors">
-            {{director.Name}}
+            <div ui-sref="directors({id: director.Id})">
+                {{director.Name}}
+            </div>
             <button ng-click="addDirector(director)">Add</button>
         </div>
         </div>

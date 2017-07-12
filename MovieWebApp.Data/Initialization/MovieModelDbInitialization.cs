@@ -6,7 +6,7 @@ using MovieWebApp.Data.Models.Entities;
 
 namespace MovieWebApp.Data.Initialization
 {
-    public class MovieModelDbInitialization : DropCreateDatabaseAlways<MovieContext>
+    public class MovieModelDbInitialization : CreateDatabaseIfNotExists<MovieContext>
     {
         protected override void Seed(MovieContext context)
         {

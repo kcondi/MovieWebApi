@@ -2,6 +2,8 @@
     Name: {{chosenMovieList.Name}} <br/>
     Movies:
     <div ng-repeat="movie in chosenMovieList.Movies">
-        {{movie.Title}}
-    </div>
+        <div ui-sref="details({id: movie.Id})">
+            {{movie.Title}}
+        </div>
+        </div>
 </div>

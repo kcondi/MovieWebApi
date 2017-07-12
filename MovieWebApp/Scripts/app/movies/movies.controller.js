@@ -15,6 +15,10 @@
         $scope.deleteMovie = function(id) {
             $scope.movies.splice($scope.movies.findIndex(movie => movie.Id === id), 1);
             moviesRepository.deleteMovie(id);
+            if ($scope.favorites.indexOf(id) !== -1) {
+                $scope.favorites.splice($scope.favorites.indexOf(id), 1);
+                localStorageService.set("favoritedMovies", $scope.favorites);
+            }
         }
 
         $scope.search = function(searchtext) {
@@ -27,19 +31,19 @@
             });
         }
 
-            $scope.isFavorited = function (movieId) {
-                return ~$scope.favorites.indexOf(movieId);
-            }
+        $scope.isFavorited = function (movieId) {
+            return ~$scope.favorites.indexOf(movieId);
+        }
 
-            $scope.favorite = function (movieToFavoriteId) {
-                if ($scope.favorites.indexOf(movieToFavoriteId) === -1)
-                    $scope.favorites.push(movieToFavoriteId);
-                localStorageService.set("favoritedMovies", $scope.favorites);
-            }
+        $scope.favorite = function (movieToFavoriteId) {
+            if ($scope.favorites.indexOf(movieToFavoriteId) === -1)
+                $scope.favorites.push(movieToFavoriteId);
+            localStorageService.set("favoritedMovies", $scope.favorites);
+        }
 
-            $scope.unfavorite = function(movieToUnfavoriteId) {
-                $scope.favorites.splice($scope.favorites.indexOf(movieToUnfavoriteId), 1);
-                localStorageService.set("favoritedMovies", $scope.favorites);
-            }
+        $scope.unfavorite = function(movieToUnfavoriteId) {
+            $scope.favorites.splice($scope.favorites.indexOf(movieToUnfavoriteId), 1);
+            localStorageService.set("favoritedMovies", $scope.favorites);
+        }
 
     });

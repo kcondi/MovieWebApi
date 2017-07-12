@@ -2,14 +2,18 @@
     Edit movie list: <br />
     Name: <input type="text" ng-model="name"/> <br />
     Movies: <div ng-repeat="movie in chosenMovieList.Movies">
+    <div ui-sref="details({id: movie.Id})">
         {{movie.Title}}
+    </div>
         <button ng-click="removeMovie(movie)">Remove</button>
     </div>
     <br/>
     Choose movies:
     <div ng-repeat="movie in allMovies">
-        {{movie.Title}}
-        <button ng-click="addMovie(movie)">Add</button>
-    </div>
+        <div ui-sref="details({id: movie.Id})">
+            {{movie.Title}}
+            </div>
+            <button ng-click="addMovie(movie)">Add</button>
+        </div>
     <button ng-click="editMovieList()">Edit</button>
 </div>

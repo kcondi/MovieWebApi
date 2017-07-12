@@ -7,12 +7,15 @@
     <br />
     Genre: {{chosenMovie.Genre.Name}}
     <br />
-    Director: {{chosenMovie.Director.Name}}
-    <button ui-sref="directors({id: chosenMovie.Director.Id})">Details</button>
+    Director: 
+    <div ui-sref="directors({id: chosenMovie.Director.Id})">
+        {{chosenMovie.Director.Name}}
+    </div>   
     <br />
     Actors:
     <div ng-repeat="actor in chosenMovie.Actors">
-        {{actor.Name}}
-        <button ui-sref="actors({id: actor.Id})">Details</button>
+        <div ui-sref="actors({id: actor.Id})">
+            {{actor.Name}}
+        </div>
     </div>
 </div>

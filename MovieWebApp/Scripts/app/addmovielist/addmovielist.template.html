@@ -3,7 +3,9 @@
     Name: <input type="text" ng-model="name" /> <br />
     Choose movies:
     <div ng-repeat="movie in allMovies">
-        {{movie.Title}}
+        <div ui-sref="details(id: movie.Id)">
+            {{movie.Title}}
+        </div>
         <button ng-click="addMovie(movie)">Add</button>
     </div>  
     <button ng-click="addNewMovieList()">Add movie list</button>

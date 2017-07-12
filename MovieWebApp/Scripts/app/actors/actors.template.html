@@ -7,5 +7,7 @@ Hair: {{chosenActor.Hair}} <br/>
 Eye color: {{chosenActor.EyeColor}} <br/>
 Movies acted in:
 <div ng-repeat="movie in chosenActor.Movies">
-    {{movie.Title}}
+    <div ui-sref="details({id: movie.Id})">
+        {{movie.Title}}
+    </div>
 </div>

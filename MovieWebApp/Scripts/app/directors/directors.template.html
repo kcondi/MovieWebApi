@@ -3,5 +3,7 @@ Name: {{chosenDirector.Name}} <br/>
 Date of birth: {{chosenDirector.DateOfBirth | date: 'dd/MM/yyyy'}} <br/>
 Movies directed:
 <div ng-repeat="movie in chosenDirector.Movies">
-    {{movie.Title}}
+    <div ui-sref="details({id: movie.Id})">
+        {{movie.Title}}
+    </div>
 </div>

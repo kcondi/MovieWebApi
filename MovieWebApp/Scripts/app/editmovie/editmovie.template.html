@@ -9,17 +9,24 @@
     </div>
     <br/>
     <div ng-show="isDirectorAdded">
-    Director: {{chosenMovie.Director.Name}} 
+    Director: 
+        <div ui-sref="directors({id: chosenMovie.Director.Id})">
+            {{chosenMovie.Director.Name}} 
+        </div>
     <button ng-click="removeDirector()">Remove</button>
     </div>
     Actors: <div ng-repeat="actor in chosenMovie.Actors">
-        {{actor.Name}}
+        <div ui-sref="actors({id: actor.Id})">
+            {{actor.Name}}
+        </div>
         <button ng-click="removeActor(actor)">Remove</button>
     </div>
     <br/>
     Choose actors:
     <div ng-repeat="actor in allActors">
-        {{actor.Name}}
+        <div ui-sref="actors({id: actor.Id})">
+            {{actor.Name}}
+        </div>
         <button ng-click="addActor(actor)">Add</button>
     </div>
     <div ng-if="!isGenreAdded">
@@ -32,7 +39,9 @@
     <div ng-if="!isDirectorAdded">
         Choose director:
         <div ng-repeat="director in allDirectors">
-            {{director.Name}}
+            <div ui-sref="directors({id: chosenMovie.Director.Id})">
+                {{director.Name}} 
+            </div>
             <button ng-click="addDirector(director)">Add</button>
         </div>
     </div>
