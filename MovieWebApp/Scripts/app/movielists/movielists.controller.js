@@ -21,7 +21,7 @@
     }
 
     $scope.randomMovieList = function(numberOfMovies) {
-        movieListsRepository.addRandomList(numberOfMovies, $scope.genre).then(function(randomMovieList) {
+        movieListsRepository.addRandomList(numberOfMovies, $scope.genre).then(function() {
             $state.go('movielists', {}, { reload: true });
         });
     }

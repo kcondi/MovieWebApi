@@ -101,7 +101,8 @@ namespace MovieWebApp.Controllers
             {
                 Name = "Random List"
             };
-            if (genre != null)
+
+            if (genre != null && movies.Any(movie => movie.Genre.Name == genre.Name))
                 movies = movies.FindAll(movie => movie.Genre.Name == genre.Name);
 
             for (var i = 0; i < numberOfMovies; i++)

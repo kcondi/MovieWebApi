@@ -1,6 +1,7 @@
 ﻿<div ui-view>
     <div ng-show="isLoaded">
-        <input type="text" ng-model="searchtext" ng-change="search(searchtext)" placeholder="Search movies" /><br/>
+        You can search movies by title, director name or movie list name. Enter any of those values into the box. <br/>
+        <input type="text" ng-model="searchtext" ng-change="search(searchtext)" placeholder="Search movies"/><br/>
         <div ng-repeat="movie in movies track by $index">
             {{movie.Title}}
             {{movie.Year}}

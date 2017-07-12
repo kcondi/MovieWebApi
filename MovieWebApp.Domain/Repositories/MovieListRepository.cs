@@ -27,11 +27,17 @@ namespace MovieWebApp.Domain.Repositories
         }
         public void AddMovieList(MovieList movieListToAdd)
         {
+            foreach (var movie in movieListToAdd.Movies)
+                _context.Movies.Attach(movie);
+
             _context.MovieLists.Add(movieListToAdd);
             _context.SaveChanges();
         }
         public void EditMovieList(MovieList editedMovieList)
         {
+            foreach (var movie in editedMovieList.Movies)
+                _context.Movies.Attach(movie);
+
             var movieListToEdit = _context.MovieLists
                 .Include(movieList => movieList.Movies)
                 .FirstOrDefault(movieList => movieList.Id == editedMovieList.Id);

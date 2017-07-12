@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
 using System.Security.Cryptography.X509Certificates;
@@ -39,15 +40,25 @@ namespace MovieWebApp.Domain.Repositories
 
         public void AddMovie(Movie movieToAdd)
         {
+            _context.Genres.Attach(movieToAdd.Genre);
+            _context.Directors.Attach(movieToAdd.Director);
+            foreach (var actor in movieToAdd.Actors)
+                _context.Actors.Attach(actor);
             _context.Movies.Add(movieToAdd);
             _context.SaveChanges();
         }
 
         public void EditMovie(Movie editedMovie)
         {
+            _context.Genres.Attach(editedMovie.Genre);
+            _context.Directors.Attach(editedMovie.Director);
+            foreach (var actor in editedMovie.Actors)
+                _context.Actors.Attach(actor);
+
             var movieToEdit = _context.Movies
                 .Include(movie => movie.Actors)
                 .SingleOrDefault(movie => movie.Id == editedMovie.Id);
+
             if (movieToEdit == null)
                 return;
             movieToEdit.Title = editedMovie.Title;
@@ -77,8 +88,12 @@ namespace MovieWebApp.Domain.Repositories
                 .Where(movie => 
                 movie.Title.ToLower()
                 .StartsWith(searchText.ToLower()) ||
-                movie.Director.Name.ToLower()
-                .Contains(searchText.ToLower()) ||
+                movie.Director.Name
+                .Substring(0,movie.Director.Name.IndexOf(" "))
+                .ToLower().StartsWith(searchText.ToLower()) ||
+                movie.Director.Name
+                .Substring(movie.Director.Name.IndexOf(" ")+1, movie.Director.Name.Length)
+                .ToLower().StartsWith(searchText.ToLower()) ||
                 movie.MovieLists.Any(movieList => 
                 movieList.Name.ToLower()
                 .StartsWith(searchText.ToLower())))
