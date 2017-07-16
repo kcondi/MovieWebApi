@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using MovieWebApp.Data.Models.Entities;
 using MovieWebApp.DTO.MovieDetails;
-using MovieListDto = MovieWebApp.DTO.MovieListDetails.MovieListDto;
 
 namespace MovieWebApp.DTO.SearchMovies
 {

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using MovieWebApp.Data.Models.Entities;
-using MovieWebApp.DTO.MovieDetails;
 
 namespace MovieWebApp.DTO.MovieDetails
 {

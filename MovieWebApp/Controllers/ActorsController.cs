@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using MovieWebApp.Data.Models.Entities;
+﻿using System.Web.Http;
 using MovieWebApp.Domain.Repositories;
-using MovieWebApp.DTO;
 using MovieWebApp.DTO.ActorDetails;
 
 namespace MovieWebApp.Controllers

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using MovieWebApp.Data.Models.Entities;
+﻿using MovieWebApp.Data.Models.Entities;
 
 namespace MovieWebApp.DTO.SearchMovies
 {
