@@ -6,7 +6,7 @@ using MovieWebApp.DTO.MovieDetails;
 
 namespace MovieWebApp.Controllers
 {
-    [RoutePrefix("movies")]
+    [RoutePrefix("api/movies")]
     public class MoviesController : ApiController
     {
         public MoviesController()

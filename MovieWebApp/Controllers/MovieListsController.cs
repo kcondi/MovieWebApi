@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 
 namespace MovieWebApp.Controllers
 {
-    [RoutePrefix("movielists")]
+    [RoutePrefix("api/movielists")]
     public class MovieListsController : ApiController
     {
         public MovieListsController()

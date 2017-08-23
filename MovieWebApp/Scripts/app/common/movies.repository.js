@@ -2,11 +2,11 @@
     function($http) {
 
         function getAllMovies() {
-            return $http.get('/movies');
+            return $http.get('/api/movies');
         }
 
         function getMovieDetails(id) {
-            return $http.get('/movies/details',
+            return $http.get('/api/movies/details',
                 {
                     params: {
                         id: id
@@ -15,7 +15,7 @@
         }
 
         function deleteMovie(id) {
-            return $http.delete('/movies/delete',
+            return $http.delete('/api/movies/delete',
                 {
                     params: {
                         id: id
@@ -24,15 +24,15 @@
         }
 
         function getActorsGenresDirectors() {
-            return $http.get('/movies/add');
+            return $http.get('/api/movies/add');
         }
 
         function addMovie(newMovie) {
-            return $http.post('/movies/add', newMovie);
+            return $http.post('/api/movies/add', newMovie);
         }
 
         function getActorsGenresDirectorsMovie(id) {
-            return $http.get('/movies/edit',
+            return $http.get('/api/movies/edit',
                 {
                     params: {
                         id: id
@@ -41,11 +41,11 @@
         }
 
         function editExistingMovie(editedMovie) {
-            return $http.post('/movies/edit', editedMovie);
+            return $http.post('/api/movies/edit', editedMovie);
         }
 
         function searchForMovies(searchtext) {
-            return $http.get('/movies/search',
+            return $http.get('/api/movies/search',
                 {
                     params: {
                         searchtext: searchtext

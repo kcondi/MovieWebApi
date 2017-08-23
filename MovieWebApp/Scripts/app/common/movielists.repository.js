@@ -2,11 +2,11 @@
     function ($http) {
 
         function getAllMovieLists() {
-            return $http.get('/movielists');
+            return $http.get('/api/movielists');
         }
 
         function getMovieListDetails(id) {
-            return $http.get('/movielists/details',
+            return $http.get('/api/movielists/details',
                 {
                     params: {
                         id: id
@@ -15,7 +15,7 @@
         }
 
         function deleteMovieList(id) {
-            return $http.delete('/movielists/delete',
+            return $http.delete('/api/movielists/delete',
                 {
                     params: {
                         id: id
@@ -24,15 +24,15 @@
         }
 
         function getAllMovies() {
-            return $http.get('/movielists/add');
+            return $http.get('/api/movielists/add');
         }
 
         function addMovieList(newMovie) {
-            return $http.post('/movielists/add', newMovie);
+            return $http.post('/api/movielists/add', newMovie);
         }
 
         function getMoviesMovieList(id) {
-            return $http.get('movielists/edit',
+            return $http.get('/api/movielists/edit',
                 {
                     params: {
                         id: id
@@ -41,12 +41,12 @@
         }
 
         function editExistingMovieList(editedMovieList) {
-            return $http.post('/movielists/edit', editedMovieList);
+            return $http.post('/api/movielists/edit', editedMovieList);
         }
 
         function addRandomList(numberOfMovies, genre) {
             var indata = {'numberOfMovies':numberOfMovies,'genre':genre}
-            return $http.post('movielists/addrandom', indata);
+            return $http.post('/api/movielists/addrandom', indata);
         }
 
         return {
